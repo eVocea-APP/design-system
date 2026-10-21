@@ -99,6 +99,18 @@ export declare const tokens: {
         readonly "light": "#FFFFFF";
         readonly "dark": "#FFFFFF";
       };
+      readonly "error-text": {
+        readonly "light": "#CF2A1E";
+        readonly "dark": "#F97066";
+      };
+      readonly "success-text": {
+        readonly "light": "#067647";
+        readonly "dark": "#47CD89";
+      };
+      readonly "warning-text": {
+        readonly "light": "#B54708";
+        readonly "dark": "#FDB022";
+      };
     };
   };
   readonly "radius": {

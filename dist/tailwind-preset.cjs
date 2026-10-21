@@ -33,7 +33,10 @@ module.exports = {
         "success": "var(--ds-success)",
         "on-success": "var(--ds-on-success)",
         "warning": "var(--ds-warning)",
-        "on-warning": "var(--ds-on-warning)"
+        "on-warning": "var(--ds-on-warning)",
+        "error-text": "var(--ds-error-text)",
+        "success-text": "var(--ds-success-text)",
+        "warning-text": "var(--ds-warning-text)"
       },
       "fontFamily": {
         "sans": [

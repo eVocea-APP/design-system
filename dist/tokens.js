@@ -98,6 +98,18 @@ export const tokens = {
       "on-warning": {
         "light": "#FFFFFF",
         "dark": "#FFFFFF"
+      },
+      "error-text": {
+        "light": "#CF2A1E",
+        "dark": "#F97066"
+      },
+      "success-text": {
+        "light": "#067647",
+        "dark": "#47CD89"
+      },
+      "warning-text": {
+        "light": "#B54708",
+        "dark": "#FDB022"
       }
     }
   },

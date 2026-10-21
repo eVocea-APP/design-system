@@ -23,7 +23,17 @@ const TEXT_PAIRS = [
   ["on-error", "error"],
   ["on-success", "success"],
   ["on-warning", "warning"],
+  ["error-text", "page"],
+  ["error-text", "surface"],
+  ["success-text", "page"],
+  ["success-text", "surface"],
+  ["warning-text", "page"],
+  ["warning-text", "surface"],
 ];
+
+function isProposed(semantic, text, background) {
+  return semantic[text].origin === "proposed" || semantic[background].origin === "proposed";
+}
 
 function luminance(hex) {
   const channels = [1, 3, 5].map((start) => {
@@ -67,7 +77,7 @@ test("generated theme.css defines every semantic color for both modes", () => {
 test("proposed state colors meet WCAG AA for normal text in both modes", () => {
   const { semantic } = loadTokens().color;
   for (const [text, background] of TEXT_PAIRS) {
-    if (semantic[background].origin !== "proposed") continue;
+    if (!isProposed(semantic, text, background)) continue;
     for (const mode of MODES) {
       const ratio = contrast(semantic[text][mode], semantic[background][mode]);
       assert.ok(ratio >= WCAG_AA_NORMAL, `${text} on ${background} (${mode}) is ${ratio.toFixed(2)}:1`);
@@ -79,7 +89,7 @@ test("Figma-defined pairs meet at least WCAG AA large text; sub-4.5 pairs are re
   const { semantic } = loadTokens().color;
   const belowNormal = [];
   for (const [text, background] of TEXT_PAIRS) {
-    if (semantic[background].origin === "proposed") continue;
+    if (isProposed(semantic, text, background)) continue;
     for (const mode of MODES) {
       const ratio = contrast(semantic[text][mode], semantic[background][mode]);
       assert.ok(ratio >= WCAG_AA_LARGE, `${text} on ${background} (${mode}) is ${ratio.toFixed(2)}:1`);

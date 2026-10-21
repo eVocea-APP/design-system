@@ -23,6 +23,9 @@
   --ds-on-success: #FFFFFF;
   --ds-warning: #B54708;
   --ds-on-warning: #FFFFFF;
+  --ds-error-text: #CF2A1E;
+  --ds-success-text: #067647;
+  --ds-warning-text: #B54708;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -49,6 +52,9 @@
     --ds-on-success: #FFFFFF;
     --ds-warning: #B54708;
     --ds-on-warning: #FFFFFF;
+    --ds-error-text: #F97066;
+    --ds-success-text: #47CD89;
+    --ds-warning-text: #FDB022;
   }
 }
 
@@ -75,5 +81,8 @@
   --ds-on-success: #FFFFFF;
   --ds-warning: #B54708;
   --ds-on-warning: #FFFFFF;
+  --ds-error-text: #F97066;
+  --ds-success-text: #47CD89;
+  --ds-warning-text: #FDB022;
 }
 

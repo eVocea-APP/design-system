@@ -1,0 +1,25 @@
+{
+  "name": "@evocea/design-tokens",
+  "version": "0.1.0",
+  "description": "Shared eVocea design tokens for the dashboard (Tailwind v4) and the user app (NativeWind v4)",
+  "private": true,
+  "type": "module",
+  "files": ["dist", "tokens"],
+  "exports": {
+    "./theme.css": "./dist/theme.css",
+    "./native.css": "./dist/native.css",
+    "./tailwind-preset": "./dist/tailwind-preset.cjs",
+    "./tokens": {
+      "types": "./dist/tokens.d.ts",
+      "default": "./dist/tokens.js"
+    },
+    "./tokens.json": "./tokens/tokens.json"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test scripts/tokens.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

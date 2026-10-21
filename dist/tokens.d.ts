@@ -19,6 +19,14 @@ export declare const tokens: {
         readonly "light": "#F5F5F5";
         readonly "dark": "#113255";
       };
+      readonly "canvas": {
+        readonly "light": "#F5F5F5";
+        readonly "dark": "#0B2139";
+      };
+      readonly "card": {
+        readonly "light": "#FFFFFF";
+        readonly "dark": "#113255";
+      };
       readonly "content": {
         readonly "light": "#000000";
         readonly "dark": "#FFFFFF";

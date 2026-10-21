@@ -16,11 +16,15 @@ Single source of truth for eVocea design tokens, shared by `dashboard` (Tailwind
 | --- | --- |
 | `dist/theme.css` | dashboard: `@import "@evocea/design-tokens/theme.css";` after `@import "tailwindcss";` |
 | `dist/tailwind-preset.cjs` | app: `presets: [require("@evocea/design-tokens/tailwind-preset")]` in `tailwind.config` |
-| `dist/native.css` | app: imported in `global.css`, defines the `--ds-*` color variables for light and dark |
+| `dist/native.css` | app: imported in `global.css`, defines the `--ds-*` color variables. The user app is dark only, so only dark values are shipped |
 | `dist/tokens.js`, `dist/tokens.d.ts` | typed raw values for things Tailwind does not reach (shadows, native font names) |
 
-Dark mode follows `prefers-color-scheme`, and can be forced with `data-theme="dark"` or
-`data-theme="light"` on the root element (web).
+`theme.css` (dashboard) ships light and dark. Dark follows `prefers-color-scheme` and can be
+forced with `data-theme="dark"` or `data-theme="light"` on the root element. The dashboard
+sets `data-theme="light"` in `index.html`.
+
+Backgrounds: `canvas` is the page background behind cards and `card` is the card fill.
+`page` and `surface` come from the landing page design.
 
 ## Origins
 

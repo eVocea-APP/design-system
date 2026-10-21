@@ -3,6 +3,8 @@
 :root {
   --ds-page: #FFFFFF;
   --ds-surface: #F5F5F5;
+  --ds-canvas: #F5F5F5;
+  --ds-card: #FFFFFF;
   --ds-content: #000000;
   --ds-content-muted: #5E6573;
   --ds-primary: #3396FF;
@@ -32,6 +34,8 @@
   :root:not([data-theme="light"]) {
     --ds-page: #0B2139;
     --ds-surface: #113255;
+    --ds-canvas: #0B2139;
+    --ds-card: #113255;
     --ds-content: #FFFFFF;
     --ds-content-muted: #ABA8A8;
     --ds-primary: #3396FF;
@@ -61,6 +65,8 @@
 :root[data-theme="dark"] {
   --ds-page: #0B2139;
   --ds-surface: #113255;
+  --ds-canvas: #0B2139;
+  --ds-card: #113255;
   --ds-content: #FFFFFF;
   --ds-content-muted: #ABA8A8;
   --ds-primary: #3396FF;
@@ -118,6 +124,8 @@
 @theme inline {
   --color-page: var(--ds-page);
   --color-surface: var(--ds-surface);
+  --color-canvas: var(--ds-canvas);
+  --color-card: var(--ds-card);
   --color-content: var(--ds-content);
   --color-content-muted: var(--ds-content-muted);
   --color-primary: var(--ds-primary);

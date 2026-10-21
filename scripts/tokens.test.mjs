@@ -16,6 +16,10 @@ const TEXT_PAIRS = [
   ["content", "surface"],
   ["content-muted", "page"],
   ["content-muted", "surface"],
+  ["content", "canvas"],
+  ["content", "card"],
+  ["content-muted", "canvas"],
+  ["content-muted", "card"],
   ["on-primary", "primary"],
   ["on-accent", "accent"],
   ["on-control", "control"],
@@ -72,6 +76,16 @@ test("generated theme.css defines every semantic color for both modes", () => {
     const declarations = css.split(`--ds-${name}:`).length - 1;
     assert.equal(declarations, 3, `--ds-${name} must be declared in light, media dark and data-theme dark`);
   }
+});
+
+test("native.css ships each semantic color once, with the dark value only", () => {
+  const css = readFileSync(join(distDir, "native.css"), "utf8");
+  for (const [name, entry] of Object.entries(loadTokens().color.semantic)) {
+    const declarations = css.split(`--ds-${name}:`).length - 1;
+    assert.equal(declarations, 1, `--ds-${name} must be declared exactly once in native.css`);
+    assert.ok(css.includes(`--ds-${name}: ${entry.dark};`), `--ds-${name} is not the dark value`);
+  }
+  assert.ok(!css.includes("prefers-color-scheme"), "native.css must not switch themes");
 });
 
 test("proposed state colors meet WCAG AA for normal text in both modes", () => {

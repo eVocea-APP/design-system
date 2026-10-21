@@ -14,6 +14,8 @@ module.exports = {
         },
         "page": "var(--ds-page)",
         "surface": "var(--ds-surface)",
+        "canvas": "var(--ds-canvas)",
+        "card": "var(--ds-card)",
         "content": "var(--ds-content)",
         "content-muted": "var(--ds-content-muted)",
         "primary": "var(--ds-primary)",

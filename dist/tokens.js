@@ -19,6 +19,14 @@ export const tokens = {
         "light": "#F5F5F5",
         "dark": "#113255"
       },
+      "canvas": {
+        "light": "#F5F5F5",
+        "dark": "#0B2139"
+      },
+      "card": {
+        "light": "#FFFFFF",
+        "dark": "#113255"
+      },
       "content": {
         "light": "#000000",
         "dark": "#FFFFFF"
